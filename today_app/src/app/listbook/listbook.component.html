@@ -1,0 +1,23 @@
+<p>Book List</p>
+
+<button (click)="getAllBooks()">List Newly Added Books!</button>
+
+<!-- *ngIf -->
+@if(bookarr) 
+{
+<p> Total no of books {{bookarr.length}} !</p>
+<ul>
+
+     <!--*ngFor-->
+    @for(b of bookarr;track b.bookid) 
+    {
+    <li>
+      {{b.bookid}} <br>
+      {{b.bookname}} <br>
+      {{b.bookprice}} <br>
+      
+    </li>
+    }
+</ul>
+}
+

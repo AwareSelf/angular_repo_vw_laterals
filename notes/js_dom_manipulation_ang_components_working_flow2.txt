@@ -1,0 +1,43 @@
+
+
+ang UI/JS UI/React UI
+
+1) web app --> server side initially
+
+2) hit url in browser
+
+3) client-side ang code (Js code) --> bundled (webpack bundling JS code) --> downloaded from
+                            server side to client-side inside the browser window
+                            (SPA)index.html borwser window 
+
+4) Ui -> event -> textfiled fill -> submit, button click -->
+     ang JS code executed 
+   first page loaded --> start --> ang js code run --> manipulate UI certain way
+
+   DOM Manipulation (js WHAT IS dom?)
+   Document Object Model 
+   web page browser window (html -> head, body -> head --> chidl body-->div -> span,table)
+    - inverted tree structure
+    - every html element is treated ashtml-JS object 
+
+   UI JS,JQuery -> DOM manipulate --> some way u will change it 
+   ang/react FM --> DOM Manipulation --> 0 coding -->behind the scenes 
+   component --> data & functions(data) + html template (data render)
+   book component --> bookid,bookname,bookprice -->  setbookname,getbookname, changeprice
+                  --> html template --> bookid,bookname,bookprice --><div>
+
+   listbook component --> book array -->   addbook, delbook, listbook ,changebookdet
+                      --> html template --> table
+
+   addbook component --> bookid,bkname --> func setbookdetails
+                     --> book html form -->bookid,bkname submit  (data-binding)
+
+   ang service --> share common data between components --> plain shared functionality --> no html template
+
+
+
+    flow -->  UI --> UI Ang compoenent  --> Ang client bookService --> Backend Rest service --> dao --> db
+ 
+            
+
+       

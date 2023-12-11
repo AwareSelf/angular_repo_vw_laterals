@@ -1,0 +1,24 @@
+
+Nodejs --> runtime --> allows you to run javascript outside the browser
+
+JS --> browser --> JS runtime engine
+NodeJS --> JS runtime engine --> run JS code outside browser
+server side programming 
+npm - NODE PACKAGE MANAGER --> allows you to install packages at runtime
+npm install -g pkgname@17
+
+angular/cli --> angular command line interface
+angular commands from command prompt
+for example:
+new angular demo appln --> out-of-box
+ng new my-app
+ng g c book
+
+npm install -g @angular/cli@17
+
+angexamples> npm install bootstrap
+
+web app:
+full-stack
+front-end                           --> back-end
+angular/react/JS Jquery - browser   --> java springboot/.net/NodeJS - expressjs (Rest services JS)

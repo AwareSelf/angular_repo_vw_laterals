@@ -1,0 +1,65 @@
+
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+<p *ngIf='myname'> My name is {{myname}} </p>
+
+</div>
+<h2>Enter Book Detail </h2>
+<input #bid placeholder='bookid'/>
+<input #bn placeholder='bookname'/>
+<input #bp placeholder='bookprice'/>
+<button (click)="displayBook(bid.value,bn.value,bp.value);bid.value='';bn.value='';bp.value=''">display</button>
+<hr/>
+<div>
+<!--  
+<div *ngIf='mybook; else noBookDetails'>
+ <h2>Book Details </h2>
+ <table>
+   <tr>
+     <td>Bookid   : </td>
+     <td> {{mybook.bookid}} </td>
+  </tr>
+  <tr>
+    <td>Book Name : </td>
+    <td>{{mybook.bookname}} </td>
+  </tr>
+  <tr>
+     <td>Book Price: </td>
+     <td>{{mybook.bookprice}} </td>
+  </tr>
+  </table>
+</div>
+<ng-template #noBookDetails>
+  The Book Details not yet submitted!
+</ng-template>
+
+</div>
+-->
+
+
+  @if(mybook)
+  {
+  <h2>Book Details </h2>
+  <table>
+    <tr>
+      <td>Bookid   : </td>
+      <td> {{mybook.bookid}} </td>
+   </tr>
+   <tr>
+     <td>Book Name : </td>
+     <td>{{mybook.bookname}} </td>
+   </tr>
+   <tr>
+      <td>Book Price: </td>
+      <td>{{mybook.bookprice}} </td>
+   </tr>
+   </table>
+  }
+  @else
+  {
+   The Book Details Not Yet Submitted!
+   }
+ 
+ </div>

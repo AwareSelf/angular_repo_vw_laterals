@@ -1,0 +1,29 @@
+
+
+
+<input type="text" [(ngModel)]="pricecap" placeholder="enter pricecap" />
+
+@if(pricecap)
+{
+<p>you entered pricecap as {{pricecap}} !</p>
+}
+<app-addbook (bookevt) ="setBookDet($event)"></app-addbook>
+<hr>
+@if(book)
+{
+<p>Book event received, book details set:</p>
+{{book.bookid}}
+{{book.bookname}}
+{{book.bookprice}}
+<hr>
+<app-listbook [bookpriceccap]="pricecap"  [bk]="book"  ></app-listbook>
+}
+@else
+{
+    <p>No Book event fired and received yet!</p>
+}
+
+
+
+
+

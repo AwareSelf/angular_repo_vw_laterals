@@ -1,0 +1,16 @@
+<div class="row">
+  <form>
+    <div class="form-group">
+      <label for="id">ID</label>
+      <input [(ngModel)]="book.id" type="text" name="id" class="form-control" id="id"  placeholder="Enter book ID">
+      <label for="name">Book Name</label>
+      <input [(ngModel)]="book.name" type="text" name="name" class="form-control" id="name"  placeholder="Enter book name">
+       <label for="price">Book Price</label>
+      <input [(ngModel)]="book.price" type="text" name="price" class="form-control" id="price"  placeholder="Enter book price">
+      <label for="description">Book Description</label>
+      <textarea [(ngModel)]="book.description" name="description" class="form-control" id="description" placeholder="Enter book desc">
+                </textarea>
+     </div>
+  </form>
+</div>
+  <button class="btn btn-primary" (click)="createBook()">Create book</button>

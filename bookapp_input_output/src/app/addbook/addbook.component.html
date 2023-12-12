@@ -1,0 +1,32 @@
+<p>addbook works!</p>
+
+
+@if(book)
+{
+    <!-- two way binding: txtfld => property , property=>txtfld -->
+<input type="text" placeholder="bookid" [(ngModel)]="book.bookid">
+<input type="text" placeholder="bookname" [(ngModel)]="book.bookname">
+<input type="text" placeholder="bookprice" [(ngModel)]="book.bookprice">
+<!-- output event binding: UI --to-- component func/property/code -->
+<button (click)="addBook()">Add book</button> 
+
+}
+@else
+{
+    <p>No Book defined yet!</p>
+}
+
+<hr>
+@if(book && book.bookprice!=-1)
+{
+<div>
+<p> Book Details before adding book to cart!</p>
+{{book.bookid}} <br>
+{{book.bookname}} <br>
+{{book.bookprice}} <br>
+</div>
+}
+@else
+{
+    <p>No Book details entered yet!</p>
+}

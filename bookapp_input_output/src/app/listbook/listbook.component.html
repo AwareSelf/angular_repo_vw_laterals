@@ -1,0 +1,47 @@
+<p>Book List</p>
+
+
+<!-- *ngIf -->
+@if(bookarr) 
+{
+<p> Total no of books {{bookarr.length}} !</p>
+<ul>
+
+     <!--*ngFor-->
+    @for(b of bookarr;track b.bookid) 
+    {
+    <li>
+      {{b.bookid}} <br>
+      {{b.bookname}} <br>
+      {{b.bookprice}} <br>
+      
+    </li>
+    }
+</ul>
+}
+<hr>
+@if(mypricecap)
+{
+  <p>The pricecap entered by end-user is {{mypricecap}}</p><br>
+  <p>List of books below pricecap:-</p>
+  <ul>
+
+    <!--*ngFor-->
+   @for(b of bookarr;track b.bookid) 
+   {
+
+    @if(b.bookprice < mypricecap)
+    {
+      <li>
+        {{b.bookid}} <br>
+        {{b.bookname}} <br>
+        {{b.bookprice}} <br>
+      </li>
+    }
+   }
+</ul>
+
+  
+
+}
+

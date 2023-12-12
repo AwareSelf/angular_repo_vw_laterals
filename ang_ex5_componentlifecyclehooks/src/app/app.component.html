@@ -1,0 +1,22 @@
+
+<div class="container">
+
+  <div>
+    <p>
+      What is use of '&#64;ViewChild' in Angular? <br>
+      In Angular, ViewChild is a decorator that is used to get a reference to a child 
+      component or an element within a parent component. 
+      It allows the parent component to access and interact with the properties, methods, 
+      and events of the child component or element.
+    </p>
+  </div>
+  <hr>
+  <p appGreet>{{greetMe}}</p>
+
+  <label for="appname">App Name</label>
+  <input class="form-control" type=text name="appname"  value="component lifecycle" #appname/>
+
+  <app-book (out_book_evnt)="createBook($event)"></app-book>
+  <app-book-list [books]="booklist"></app-book-list>
+
+  </div>

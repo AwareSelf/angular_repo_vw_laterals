@@ -1,0 +1,28 @@
+<div>
+  <p>
+    &#64;HostBinding and &#64;HostListener are two decorators in Angular that can be really useful in <br>
+    custom directives. &#64;HostBinding lets you set properties on the element or component that <br>
+    hosts the directive, and &#64;HostListener lets you listen for events on the host element or component.
+  </p>
+</div>
+<hr>
+<div appHighlight 
+     [defaultColor]="'yellow'"
+     [highlightColor]="'cyan'"> Hi All </div>
+
+<p style="background-color:red;"> This will not change</p>
+
+
+
+<p appChangefontsize 
+  [startingFontSize]="'300%'" 
+  [clkfont]="'100%'">
+  
+    Hi this font size will change!, using alias for input tag!
+</p>
+
+
+<p [appChangefontsize1]="'200%'"
+   [clkfont]="'100%'">
+   Hi this font size will change!, using input alias name same as custom attribute directive!
+</p>

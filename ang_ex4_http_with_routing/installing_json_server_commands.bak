@@ -1,0 +1,25 @@
+1) create a new app witjh routing
+   ng new http_crud_app
+2) inside it create a folder called as server
+3) inside server folder create file database.json
+    in that file add below json object:-
+
+    {
+	 "books": []
+    }
+  
+  and save the file
+4) go to command prompt:- and run below command with -g option
+	npm install -g json-server
+5) go to server folder from command prompt and start 
+   json-server using npx command on port  5000 as shown below.
+
+C:\Namrata_SoftwareDev\angular_30july\Angular_Demos
+\angular_examples
+\http_crud_app
+\server> npx json-server --watch -p 5000 database.json
+
+6) open browser and type below url
+   http://localhost:5000/books
+
+   will load database.json in browser and display empty array

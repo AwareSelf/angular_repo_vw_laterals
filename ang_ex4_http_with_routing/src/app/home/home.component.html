@@ -1,0 +1,25 @@
+<div>
+    <h1>My Books</h1>
+    <button type="button" [routerLink]="'/create'">Create new book</button>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Book Name</th>
+                <th>Book Author</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let b of books">
+                <td>{{b.bookid}}</td>
+                <td>{{b.bookname}}</td>
+                <td>{{b.bookauthor}}</td>
+                 <td>
+                    <button type="button" [routerLink]="['/update', b.bookid]">Update</button>
+                    <button type="button" (click)="delete(b.bookid)">Remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

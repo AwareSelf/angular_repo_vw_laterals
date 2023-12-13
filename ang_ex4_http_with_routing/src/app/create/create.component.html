@@ -1,0 +1,21 @@
+<div>
+    <h1>Create Book</h1>
+    <form [formGroup]="bookForm" (ngSubmit)="submitForm()" novalidate>
+        <div class="form-group">
+            <label>Book Id</label>
+            <input type="text" formControlName="bookid" class="form-control" maxlength="20">
+        </div>
+        <div class="form-group">
+            <label>Book Name</label>
+            <textarea class="form-control" formControlName="bookname" rows="3" maxlength="50"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Book Author</label>
+            <input type="text" formControlName="bookauthor" class="form-control">
+        </div>
+      
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+

@@ -25,14 +25,19 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/listbooks" routerLinkActive="active">List All Books</a>
       </li>
+      <!--
       <li class="nav-item">
         <a class="nav-link" routerLink="/searchbook/3" routerLinkActive="active">SearchBook</a>
       </li>
+      -->
    </ul>
   </div>
 
 </nav>
-
+<hr>
+<input type="text" placeholder="enter id of book to search" [(ngModel)]="id" />
+<button (click)="navSearch(id)">SearchBook</button>
+<hr>
 <!-- step 3: mark the place were router components (templates) will get loaded : using router-outlet tag-->
 <router-outlet></router-outlet>
 </div>

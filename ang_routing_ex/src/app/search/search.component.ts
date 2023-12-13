@@ -15,13 +15,13 @@ export class SearchComponent {
   constructor(private route:ActivatedRoute)
   {
      
-     
+      console.log('searchbook component constructor called...');
       //asynchronous call //Observable
        this.route.params.subscribe( params => {
            if(params['id'])
            {
                this.dosearch(params['id']);
-               
+
            }
            else
            {

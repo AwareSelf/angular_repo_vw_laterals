@@ -1,0 +1,22 @@
+{
+  "books": [
+    {
+      "bookid": "1",
+      "bookname": "CoreJava",
+      "bookprice": 300,
+      "id": 1
+    },
+    {
+      "bookid": "2",
+      "bookname": "Angular",
+      "bookprice": 400,
+      "id": 2
+    },
+    {
+      "bookid": 1,
+      "bookname": "Angular",
+      "bookprice": 200,
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+<h2>Enter Book Detail </h2>
+<input #bid placeholder='bookid'/>
+<input #bn placeholder='bookname'/>
+<input #bp placeholder='bookprice'/>
+<button (click)="addBook(bid.value,bn.value,bp.value);bid.value='';bn.value='';bp.value=''">ADD</button>
+<hr/>
+
+ <h2>Book Details </h2>
+ <table>
+   <tr>
+     <th>Bookid</th>
+     <th>Book Name</th>
+     <th>Book Price </th>
+  </tr>
+   <tr *ngFor="let b of bookarr" >
+      <td> {{b.bookid}} </td>
+       <td>{{b.bookname}} </td>
+       <td>{{b.bookprice}} </td>
+  </tr>
+</table>
+<hr/>
+<!--
+  Each item in the collection needs to have a unique property (like the id), 
+  and we need to refer to this value with the track argument. 
+  If the collection contains strings or numbers, not objects, we can use the item itself as 
+  a track value: @for (item of items; track item
+-->
+<ul>
+  @for (book of bookarr; track book.bookid; let index = $index, first = $first; let last = $last, 
+  even = $even, odd = $odd; let count = $count) {
+  
+  <li>
+     
+      <div>
+        @switch (book.bookname) {
+          
+          @case ("Angular") {
+            <span>It's Angular related book..</span>
+          }
+          @case ("React") {
+            <span>It's React related book..</span>
+          }
+          @default {
+            <span>It's some other framework book other than Angular and React!</span>
+          }
+        }
+      </div>
+      <strong>{{book.bookname}}</strong> <br>
+      <strong>{{book.bookprice}}</strong> <br>
+      index={{index}} first={{first}} last={{last}} 
+      even={{even}} odd={{odd}} count={{count}}
+  </li>
+  }
+  @empty {
+    <span>The collection of book array is empty</span>
+  }
+  
+  </ul>
+ <hr/>
+ 
+
+</div>
+<!--
+  How to migrate ngIf, ngFor, and ngSwitch to the new control block syntax
+To convert the old structural directives in an app's templates to the new control blocks, 
+run the following schematic:
+  ng g @angular/core:control-flow-migration
+-->
+<!--
+  https://www.angularaddicts.com/p/angular-17-new-control-flow-with-signals
+-->

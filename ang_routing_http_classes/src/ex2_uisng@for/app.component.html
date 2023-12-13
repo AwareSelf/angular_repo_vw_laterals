@@ -1,0 +1,41 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+<h2>Enter Book Detail </h2>
+<input #bid placeholder='bookid'/>
+<input #bn placeholder='bookname'/>
+<input #bp placeholder='bookprice'/>
+<button (click)="addBook(bid.value,bn.value,bp.value);bid.value='';bn.value='';bp.value=''">ADD</button>
+<hr/>
+
+ <h2>Book Details </h2>
+ <table>
+   <tr>
+     <th>Bookid</th>
+     <th>Book Name</th>
+     <th>Book Price </th>
+  </tr>
+   <tr *ngFor="let b of bookarr" >
+      <td> {{b.bookid}} </td>
+       <td>{{b.bookname}} </td>
+       <td>{{b.bookprice}} </td>
+  </tr>
+</table>
+<hr/>
+<ul>
+  @for (book of bookarr; track book.bookid; let index = $index, first = $first; let last = $last, 
+  even = $even, odd = $odd; let count = $count) {
+  
+  <li>
+      <strong>{{book.bookname}}</strong> <br>
+      <strong>{{book.bookprice}}</strong> <br>
+      index={{index}} first={{first}} last={{last}} 
+      even={{even}} odd={{odd}} count={{count}}
+  </li>
+  
+  }
+  </ul>
+
+</div>

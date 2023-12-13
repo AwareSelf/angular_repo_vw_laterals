@@ -25,15 +25,21 @@ export class BookComponent {
   constructor(bs:BookService,router:Router)
   {
      this.bookserv=bs;
-     this.mybook=new Book(1,"Angular",200);
+     this.mybook=new Book("Angular",200,3);
      this.router =  router;
   }
 
   addbook(b:Book):void
   {
-     this.bookserv.addBook(b).subscribe(()=>{
-      this.status="book posting is successful.";
-      console.log("book post successful")
+     this.bookserv.addBook(b).subscribe((b:Book)=>{
+    
+      console.log("book post successful");
+      console.log(b);
+      this.mybook=b;
+      this.status="book with bookid:"+this.mybook.id+
+                  ",bookname="+this.mybook.bookname+",bookprice="+this.mybook.bookprice
+                  +" posted successfully.";
+
      // this.router.navigate([''])
      });
      

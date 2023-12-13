@@ -11,11 +11,11 @@
 
 </tr>
 <tr *ngFor="let b of bkarr" >
-    <td> {{b.bookid}} </td>
+    <td> {{b.id}} </td>
     <td> {{b.bookname}} </td>
     <td> {{b.bookprice}} </td>
-   <!-- <td> <button (click)='delBook(b)'>Delete</button>
-    <td> <button (click)='editBook(b)'>Edit</button> -->
+    <td> <button (click)='delBook(b)'>Delete</button>
+    <td> <button (click)='editBook(b)'>Edit</button> 
 </tr>
 </table>
 
@@ -23,9 +23,9 @@
     <hr>
     <input [(ngModel)]='temp.bookname' placeholder='bookname'/>
     <input [(ngModel)]='temp.bookprice' placeholder='bookprice' />
-    <!--
+    
     <button (click)='updateBook(temp)'>Ok</button>
-    <button (click)='cancelBook(temp)'>Cancel</button> -->
+    <button (click)='cancelBook(temp)'>Cancel</button> 
 </div>
 
 </div>

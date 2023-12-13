@@ -9,7 +9,7 @@ import { Observable, catchError, throwError } from 'rxjs';
   })
 export class BookService
 {
-    bookarr:Book[];
+   
     baseurl:string = "http://localhost:5000"
     httpser!:HttpClient;
     httpOptions = {
@@ -21,18 +21,13 @@ export class BookService
     constructor(httpser:HttpClient)
     {
         console.log('book service instance got created..');
-        this.bookarr=[];
+        
         this.httpser = httpser;
     }
 
     addBook(b:Book):Observable<Book> 
     {
-        this.bookarr.push(b);
-      //  return this.httpser.post<Book>(this.baseurl+"/book/",JSON.stringify(b),this.httpOptions);
-
-      return this.httpser.post<Book>(this.baseurl + '/books', 
-      JSON.stringify(b), 
-this.httpOptions)//.pipe(catchError(this.errorHandler))
+          return this.httpser.post<Book>(this.baseurl + '/books', JSON.stringify(b), this.httpOptions)//.pipe(catchError(this.errorHandler))
 
     }
 
@@ -42,40 +37,18 @@ this.httpOptions)//.pipe(catchError(this.errorHandler))
       
     }
 
-/*
-avoid using indexOf to locate book object in array as indexof will find object
-only if its original object and not its copy
-whereas if you search using bookid it will find book even if its original
-or copy
-*/
     deleteBook(b:Book)
     {
-         var index=-1;
-        for(var i=0;i< this.bookarr.length;i++)
-        {
-            if(this.bookarr[i].bookid == b.bookid)
-             index=i;
-
-        }
-        if(index!=-1)
-        this.bookarr.splice(index,1);
+        
+         return this.httpser.delete<Book>(this.baseurl + '/books/' + b.id, this.httpOptions);
+   
+       
     }
 
-    updateBook(b:Book)
+    updateBook(book:Book)
     {
-        var index=-1;
-        for(var i=0;i< this.bookarr.length;i++)
-        {
-            if(this.bookarr[i].bookid == b.bookid)
-             index=i;
-
-        }
-        console.log('index val:'+index);
-        if(index!=-1)
-        {
-          this.bookarr[index].bookname=b.bookname;
-          this.bookarr[index].bookprice=b.bookprice;
-        }
+        return this.httpser.put<Book>(this.baseurl + '/books/' + book.id, JSON.stringify(book), 
+    this.httpOptions)
     }
 
     /*

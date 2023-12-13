@@ -25,15 +25,10 @@ export class ShowBookComponent implements OnInit{
     this.bkarr=[];
     this.bookserv.getAllBooks().subscribe((books:Book[])=>{
      
-      for(var i =0;i<books.length;i++)
-      {
-        console.log(books[i].bookid+","+books[i].bookname+","+books[i].bookprice);
-      }
+      console.log(books);
+   
       this.bkarr = books;
-      for(var i =0;i<this.bkarr.length;i++)
-      {
-        console.log(this.bkarr[i].bookid+","+this.bkarr[i].bookname+","+this.bkarr[i].bookprice);
-      }
+      console.log(this.bkarr);
 
     })
     if(this.bkarr.length===0)
@@ -48,15 +43,11 @@ export class ShowBookComponent implements OnInit{
       this.bookserv.getAllBooks().subscribe((books:Book[])=>{
 
         
-      for(var i =0;i<books.length;i++)
-      {
-        console.log(books[i].bookid+","+books[i].bookname+","+books[i].bookprice);
-      }
+        console.log(books);
+   
       this.bkarr = books;
-      for(var i =0;i<this.bkarr.length;i++)
-      {
-        console.log(this.bkarr[i].bookid+","+this.bkarr[i].bookname+","+this.bkarr[i].bookprice);
-      }
+      console.log(this.bkarr);
+
 
   
       })
@@ -76,16 +67,10 @@ export class ShowBookComponent implements OnInit{
     console.log('inside list books');
     this.bookserv.getAllBooks().subscribe((books:Book[])=>{
 
-      
-      for(var i =0;i<books.length;i++)
-      {
-        console.log(books[i].bookid+","+books[i].bookname+","+books[i].bookprice);
-      }
+      console.log(books);
+   
       this.bkarr = books;
-      for(var i =0;i<this.bkarr.length;i++)
-      {
-        console.log(this.bkarr[i].bookid+","+this.bkarr[i].bookname+","+this.bkarr[i].bookprice);
-      }
+      console.log(this.bkarr);
 
 
     })
@@ -93,27 +78,54 @@ export class ShowBookComponent implements OnInit{
       console.log('book array is empty');
     for(let b of this.bkarr)
     {
-      console.log(b.bookid+','+b.bookname+','+b.bookprice);
+      console.log(b.id+','+b.bookname+','+b.bookprice);
     }
   }
-/*
+
   delBook(b:Book)
   {
-    this.bookserv.deleteBook(b);
-    this.bkarr=this.bookserv.getAllBooks();
+   
+    this.bookserv.deleteBook(b).subscribe(()=>{
+
+      console.log('inside showbook component, deletebook method:book with id:'+b.id+'deleted successfully');
+      this.bookserv.getAllBooks().subscribe((books:Book[])=>{
+
+        console.log('after deleting book, fetch all books..');
+        console.log(books);
+     
+        this.bkarr = books;
+        console.log(this.bkarr);
+  
+  
+      })
+
+    })
+ 
+ 
   }
 
   editBook(b:Book)
   {
     console.log('inside editBook');
     this.editflag=true;
-    this.temp=new Book(b.bookid,b.bookname,b.bookprice);
+    this.temp=new Book(b.bookname,b.bookprice,b.id);
    }
 
    updateBook(b:Book)
    {
-     this.bookserv.updateBook(b);
-     this.bkarr = this.bookserv.getAllBooks();
+     this.bookserv.updateBook(b).subscribe(()=>{
+      console.log('inside showbook component, book with bookid:'+b.id+'updated successfully');
+     })
+     this.bookserv.getAllBooks().subscribe((books:Book[])=>{
+
+      console.log('after updating book, fetch all books..');
+      console.log(books);
+   
+      this.bkarr = books;
+      console.log(this.bkarr);
+
+
+    })
      this.editflag=false;
    }
    
@@ -122,6 +134,6 @@ export class ShowBookComponent implements OnInit{
     this.editflag=false;
      return;
    }
-   */
+   
 
  }

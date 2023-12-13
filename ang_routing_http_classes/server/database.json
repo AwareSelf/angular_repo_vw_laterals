@@ -1,22 +1,19 @@
 {
   "books": [
     {
-      "bookid": "1",
-      "bookname": "CoreJava",
-      "bookprice": 300,
+      "bookname": "React",
+      "bookprice": "300",
       "id": 1
     },
     {
-      "bookid": "2",
-      "bookname": "Angular",
-      "bookprice": 400,
-      "id": 2
+      "bookname": "Angular123",
+      "bookprice": "2500",
+      "id": 3
     },
     {
-      "bookid": 1,
-      "bookname": "Angular",
-      "bookprice": 200,
-      "id": 3
+      "bookname": "CoreJava",
+      "bookprice": "2000",
+      "id": "2"
     }
   ]
 }

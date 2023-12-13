@@ -1,0 +1,38 @@
+
+<div class="container">
+<!-- step 2: add RouterLink in imports of component ts file, add routerLinks in html template -->
+<!--
+<div>
+  <ul>
+    <li>
+      <a routerLink="/addbook">Add Book</a>
+    </li>
+    <li>
+      <a routerLink="/listbooks">List All Books</a>
+    </li>
+  </ul>
+</div>
+<hr>
+-->
+<nav class="navbar navbar-expand-sm bg-light">
+
+  <div class="container-fluid">
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/addbook" routerLinkActive="active">Register Book</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/listbooks" routerLinkActive="active">List All Books</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/searchbook/3" routerLinkActive="active">SearchBook</a>
+      </li>
+   </ul>
+  </div>
+
+</nav>
+
+<!-- step 3: mark the place were router components (templates) will get loaded : using router-outlet tag-->
+<router-outlet></router-outlet>
+</div>

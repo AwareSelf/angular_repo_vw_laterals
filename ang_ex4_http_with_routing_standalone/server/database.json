@@ -1,0 +1,16 @@
+{
+  "books": [
+    {
+      "bookid": "1",
+      "bookname": "CoreJava",
+      "bookauthor": "Nandini",
+      "id": 1
+    },
+    {
+      "bookid": "2",
+      "bookname": "Angular",
+      "bookauthor": "nama",
+      "id": 2
+    }
+  ]
+}

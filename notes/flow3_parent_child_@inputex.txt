@@ -1,0 +1,26 @@
+
+ yesterday example:today_app
+ appcomponent          -1) addbook component
+ pricecap->enduser      2) listbook component
+                           listing of all books
+                           mypricecap , 
+                            -- listing books which are below mypricecap
+              
+
+@input 
+ ex4_componentnesting_@input
+ appcomponent -> 1) bookcomponent -1) form bookdetails
+                                   2) list all added books
+ pricecap     -->   mypricecap     3) list all books which are below mypricecap
+ cartsize     <--   bookarrsize
+ html->cartsize
+
+
+@ouput event
+
+parent -> app component --> pricecap, function-> showcartsize(data)
+            <mybook [mypricecap]='pricecap' (bookadded)=showcartsize($event)/>     
+
+bookcomponent (selector=>mybook)--> bookdetail(form), listbook (array - bookadd)
+                                     customevent -> event emit(bookadded) 
+                                                       -> array.length 

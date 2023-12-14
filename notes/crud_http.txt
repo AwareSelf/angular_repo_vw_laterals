@@ -1,0 +1,14 @@
+ crud         http
+ service 
+ retrieveall  get   -> fetch the data from backend
+ retrieve(id)        -> url (path param,query param) (body = empty)
+ create       post  -> send/post data to backened (resource)
+                    -> body -> book -> json form
+  
+ remove       delete -> url (it contain bookid) -> delete that resource on backend 
+ delete                  response => status
+
+ update
+(resource)    put -> updating the existing resource
+                  -> resource -> backend --> resource/resourceid ->update
+                                                           ->not there ->create

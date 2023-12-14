@@ -1,0 +1,13 @@
+JS -> 3 ways -> async stuff
+
+              1) callback method 
+              2) promise (async call -> single respo -> http call
+                 when(async call).then(success callback).catch(failure callback)
+                 async -> aware
+              3) req -> res1-> res2->res3  (html5 -websocket)
+                 subscribe => multiple responses => unsubscribe
+                 observables -> subscribe -> multiple responses
+                             -> unsunscribe 
+                 
+                  
+      

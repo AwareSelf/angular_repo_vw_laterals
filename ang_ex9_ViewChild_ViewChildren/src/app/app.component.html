@@ -1,0 +1,13 @@
+
+<app-mybook [bkname]="'Angular'"></app-mybook>
+<app-mybook [bkname]="'RxJS'"></app-mybook>
+<hr>
+<input type="text" placeholder="myname" value="nama" #inpele />
+
+<br><br>
+<button (click)="chngBkname()">Change bookname of Child Component - Mybook</button>
+<br><br>
+<button (click)="chngInptval()">Change value of Child Element - input element</button>
+
+<br><br>
+<button (click)="chngSecBkname()">Change value of 2nd Book Child Component - Mybook</button>

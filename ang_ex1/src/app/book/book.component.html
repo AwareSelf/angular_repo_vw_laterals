@@ -1,3 +1,5 @@
+
+<!--
 <h2>Enter Book Detail </h2>
 <input [(ngModel)]= 'mybook.bookid' placeholder='bookid'/>
 <input [(ngModel)]= 'mybook.bookname' placeholder='bookname'/>
@@ -19,4 +21,55 @@
           and bookprice = {{oldbook.bookprice}} is added successfuly to the cart! </h6>
     }
 </span>
+
+-->
+
+<h4>Book Detail - Reactive Form!</h4>
+<h6><i>A FormGroup with multiple FormControls</i></h6>
+<form [formGroup]="bookForm" novalidate >
+  <div class="form-group">
+    <label class="center-block">Book Id:
+      <input class="form-control" formControlName="bkid">
+    </label>
+  </div>
+  <div [hidden]="bookForm.get('bkid')?.status=='VALID'" class="alert alert-danger">
+    FORMFIELD BookId IS INVALID!
+  </div>
+
+  <div class="form-group">
+    <label class="center-block">Book Name:
+      <input class="form-control" formControlName="bkname">
+    </label>
+  </div>
+  <div [hidden]="bookForm.get('bkname')?.status=='VALID'" class="alert alert-danger">
+    FORMFIELD BookName IS INVALID!
+   </div>
+  <div class="form-group">
+    <label class="center-block">Book Price:
+      <input class="form-control" formControlName="bkprice">
+    </label>
+  </div>
+  <div [hidden]="bookForm.get('bkprice')?.status=='VALID'" class="alert alert-danger">
+    FORMFIELD BookPrice IS INVALID!
+ </div>
+    
+  
+  <button [disabled]='bookForm.status!="VALID"' (click)="addbook()">Add Book</button>
+  <div [hidden]="bookForm.status=='VALID'" 
+       class="alert alert-danger">
+        BOOK FORM IS INVALID!
+   </div>
+   
+ 
+</form>
+
+
+<p>Form status: {{ bookForm.status | json }}</p>
+<p>Form value: {{ bookForm.value | json }}</p>
+
+<p>Book Id: {{ bookForm.get('bkid')?.value }}</p>
+<p>Book Name: {{ bookForm.get('bkname')?.value }}</p>
+<p>Book Price: {{ bookForm.get('bkprice')?.value}}</p>
+
+
 

@@ -1,0 +1,61 @@
+<h2>Enter Book Detail </h2>
+<input [(ngModel)]= 'mybook.bookid' placeholder='bookid'/>
+<input [(ngModel)]= 'mybook.bookname' placeholder='bookname'/>
+<input [(ngModel)]='mybook.bookprice' placeholder='bookprice'/>
+<button (click)='addbook(mybook)'>Add Book</button>
+
+{{mybook.bookid}}
+{{mybook.bookname}}
+{{mybook.bookprice}}
+
+<hr/>
+<div *ngIf='mybook'>
+ <h2>Current Book Details </h2>
+ <table>
+   <tr>
+     <td>Bookid   : </td>
+     <td> {{mybook.bookid}} </td>
+  </tr>
+  <tr>
+    <td>Book Name : </td>
+    <td>{{mybook.bookname}} </td>
+  </tr>
+  <tr>
+     <td>Book Price: </td>
+     <td>{{mybook.bookprice}} </td>
+  </tr>
+  </table>
+</div>
+<hr/>
+<h2>List of all Books </h2>
+<table>
+   <tr>
+      <th>BookId</th>
+      <th>BookName</th>
+      <th>BookPrice</th>
+  </tr>
+  <tr *ngFor="let b of bookarr" >
+     <td>{{b.bookid}} </td>
+     <td>{{b.bookname}} </td>
+     <td>{{b.bookprice}}</td>
+  </tr>
+</table>
+
+<div *ngIf='mypricecap'> 
+<p>Price cap given by customer:{{mypricecap}} </p>
+<h2>List of Books below pricecap:{{mypricecap}} </h2>
+<table>
+   <tr>
+      <th>BookId</th>
+      <th>BookName</th>
+      <th>BookPrice</th>
+  </tr>
+  <tr *ngFor="let b of bookarr">
+    <ng-container *ngIf="b.bookprice < mypricecap">
+     <td>{{b.bookid}} </td>
+     <td>{{b.bookname}} </td>
+     <td>{{b.bookprice}}</td>
+    </ng-container>
+  </tr>
+</table>
+</div>

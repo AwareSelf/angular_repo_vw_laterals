@@ -12,7 +12,8 @@ import { BookService } from './book/service/book.service';
     BookComponent],
   // providers:[BookService], //provide this service when you bootstrappapplication
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  
 })
 export class AppComponent {
   title:string;

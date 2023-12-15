@@ -1,0 +1,25 @@
+<p>{{x | currency}}</p>
+<p>{{x | currency:'CAD':'symbol':'4.2-3':'en'}}</p>
+<!--
+  to format 100 into a currency with the currency pipe`.
+
+The first argument is 'CAD', which is the currency to format to.
+
+symbol is the second argument and means we show the currency symbol.
+
+The third string is the format of the number. The first number is the minimum number of integer digits. The second number is the minimum number of fraction digits. And the last number is the maximum number of fraction digits.
+
+The last argument is the locale string.
+
+Arguments passed into pipes are separated by colons.
+
+
+-->
+<p>{{y | async}}</p>
+<p>{{z | async }} </p>
+<p>{{bookarr|async }}</p>
+<p>{{x1 | date: 'YYYY/MM/dd h:mm:ss a'}}</p>
+<p>{{x2 | number: '1.0-1'}}</p>
+<p>{{ ob | json }}</p>
+<p>{{msg | lowercase}}</p>
+<p>{{marks | percent: '1.0-1': 'en'}}</p>

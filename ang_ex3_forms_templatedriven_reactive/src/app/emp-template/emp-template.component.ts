@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class EmpTemplateComponent implements OnInit {
 
 
-  ename_pattern:string = "^[a-z0-9_-]{5,15}$";
+  //ename_pattern:string = "^[a-z0-9_-]{5,15}$";
+  ename_pattern:string = "^[a-z0-9]{5,15}$";
+
 
   emp!:{empid:number,empname:string,empsalary:number,empcity:string};
 
@@ -35,6 +37,8 @@ export class EmpTemplateComponent implements OnInit {
     console.log(f);
     console.log(f.status);
     console.log(f.value.empname);
+
+    let empname = f.value.empname;
 
     if(f.value.pristine==true && f.value.touched==false)
        console.log('no one has yet tried to make entry in the form');

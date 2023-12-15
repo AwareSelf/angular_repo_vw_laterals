@@ -26,16 +26,39 @@ export class EmpReactiveComponent implements OnInit {
    // });
    
    this.empForm = this.fb.group({
-        name: ['', Validators.required ],
+        name: ['namrata',[Validators.required,Validators.pattern('^[a-z0-9]{5,15}$') ]],
        address: this.fb.group({ // <-- the child FormGroup
-        street: '',
+        street: ['abc marg' ,Validators.minLength(4)],
         city: '',
         state: '',
-        zip: ''
+        zip: '',
         }),
        power: '',
        sidekick: ''
     });
+
+
   }
 
+   mysubmit()
+   {
+      console.log('inside form mysubmit method');
+      console.log(this.empForm.status);
+      console.log(this.empForm.get('name')?.status)
+
+      if(this.empForm.status=="VALID")
+      {
+      let empname =  this.empForm.get('name')?.value;
+      let street = this.empForm.get('address.street')?.value;
+        if(street)
+         console.log(street);
+        else
+         console.log('street is undefined');
+      }
+      else
+      {
+        console.log('empform is invalid, dont extract values');
+      }
+     
+   }
 }

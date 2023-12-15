@@ -46,6 +46,15 @@
     </label>
   </div>
 
+  <button [disabled]='empForm.status!="VALID"' (click)="mysubmit()">Submit</button>
+  <div [hidden]="empForm.status=='VALID'" 
+       class="alert alert-danger">
+        FORM IS INVALID!
+   </div>
+   <div [hidden]="empForm.get('name')?.status=='VALID'" 
+       class="alert alert-danger">
+        FORMFIELD name IS INVALID, minlength is 5 and maxlength is 15!
+   </div>
 </form>
 
 

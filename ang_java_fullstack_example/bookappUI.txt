@@ -1,0 +1,6 @@
+ang_routing_http_classes
+is the Angular UI side app
+of bookapp (ang_java_fullstack_example) web application.
+
+start rest service (spring boot) in eclipse
+and then start angular app using ng serve --open

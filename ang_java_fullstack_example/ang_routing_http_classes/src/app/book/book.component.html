@@ -1,0 +1,29 @@
+<h2>Enter Book Detail </h2>
+
+<input [(ngModel)]= 'mybook.id' placeholder='bookid'/>
+<input [(ngModel)]= 'mybook.bookname' placeholder='bookname'/>
+<input [(ngModel)]='mybook.bookprice' placeholder='bookprice'/>
+<button (click)='addbook(mybook)'>Add Book</button>
+
+<span>
+<h4>Current Book Details before adding to cart!</h4>
+{{mybook.id}}
+{{mybook.bookname}}
+{{mybook.bookprice}}
+</span>
+
+<span>
+    @if(flag===true)
+    {
+      <hr>
+      <h6>Book with details: bookid= {{oldbook.id}}, bookname = {{oldbook.bookname}} <br>
+          and bookprice = {{oldbook.bookprice}} is added successfuly to the cart! </h6>
+    }
+</span>
+<span>
+@if(status)
+{
+    <p>{{status}}</p>
+}
+</span>
+

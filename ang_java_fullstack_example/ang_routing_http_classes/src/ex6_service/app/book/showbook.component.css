@@ -1,0 +1,17 @@
+p {
+    color : mediumpurple;
+    font-size:20px;
+    font-style: italic;
+    
+}
+
+table, th, tr, td {
+   border: 2px solid black;
+   width:50%;
+
+}
+
+td {
+    width:20px;
+    text-align: center;
+}

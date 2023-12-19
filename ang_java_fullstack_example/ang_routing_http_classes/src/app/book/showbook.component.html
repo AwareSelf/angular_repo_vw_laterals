@@ -1,0 +1,31 @@
+<button (click)='listbooks()' >List Book Details </button>
+<hr>
+<div *ngIf='bkarr'>
+<table>
+<tr>
+        <th>bookid</th>
+        <th>book name</th>
+        <th>book price </th>
+        <th>Delete Book </th>
+        <th>Edit Book </th>
+
+</tr>
+<tr *ngFor="let b of bkarr" >
+    <td> {{b.id}} </td>
+    <td> {{b.bookname}} </td>
+    <td> {{b.bookprice}} </td>
+    <td> <button (click)='delBook(b)'>Delete</button>
+    <td> <button (click)='editBook(b)'>Edit</button> 
+</tr>
+</table>
+
+<div *ngIf='editflag'>
+    <hr>
+    <input [(ngModel)]='temp.bookname' placeholder='bookname'/>
+    <input [(ngModel)]='temp.bookprice' placeholder='bookprice' />
+    
+    <button (click)='updateBook(temp)'>Ok</button>
+    <button (click)='cancelBook(temp)'>Cancel</button> 
+</div>
+
+</div>
